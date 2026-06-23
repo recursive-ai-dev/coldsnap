@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: #05070d;
+  overscroll-behavior: none;
+}
+
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes snowfall {
+  0% { transform: translateY(-10vh) translateX(0); }
+  100% { transform: translateY(110vh) translateX(20px); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Disable iOS double-tap zoom on the canvas/buttons */
+button { touch-action: manipulation; }
+canvas { touch-action: none; }
