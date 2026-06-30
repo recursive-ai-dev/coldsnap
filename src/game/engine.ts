@@ -443,8 +443,9 @@ export class Game {
   collect(p: Pickup) {
     p.collected = true;
     this.comboTimer = 2.5;
-    this.combo = Math.min(99, this.combo + 1);
-    const earned = p.value * this.combo;
+    const multiplier = this.combo;
+    const earned = p.value * multiplier;
+    this.combo = Math.min(99, multiplier + 1);
     this.cash += p.value;
     this.score += earned;
     this.flash = 0.4;
